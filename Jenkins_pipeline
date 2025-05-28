@@ -1,0 +1,47 @@
+pipeline {
+  environment {
+    dockerimagename = "rutvik3377/nodeapp"  // ✅ Use your own Docker Hub namespace
+    dockerImage = ""
+  }
+ 
+  agent any
+ 
+  stages {
+ 
+    stage('Checkout Source') {
+      steps {
+        git ''
+      }
+    }
+ 
+    stage('Build image create') {
+      steps {
+        script {
+          dockerImage = docker.build(dockerimagename)
+        }
+      }
+    }
+ 
+    stage('Pushing Image') {
+      environment {
+        registryCredential = 'dockerlogin' // 🧠 This must match your Jenkins credential ID
+      }
+      steps {
+        script {
+          docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+            dockerImage.push("latest")
+          }
+        }
+      }
+    }
+ 
+    stage('Deploying App to K8S') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "deploymentservice.yml", kubeconfigId: "kubernetes")
+        }
+      }
+    }
+ 
+  }
+}
