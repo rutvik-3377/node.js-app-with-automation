@@ -10,7 +10,7 @@ pipeline {
  
     stage('Checkout Source') {
       steps {
-        git ''
+        git 'https://github.com/rutvik-3377/nodeapp.git'
       }
     }
  
