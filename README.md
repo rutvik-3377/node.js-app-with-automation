@@ -32,6 +32,22 @@ overview : "Set up a real-time CI/CD pipeline where Jenkins auto-builds a Docker
          - Docker: Containerization.
          - Docker Hub: Image registry.
          - Kubernetes: Container orchestration.
+
+________________________________________________________________
+**Steps :**
+1. create 2 mediaum instance and connect putty.
+2. connect node > master 
+3. install docker.io in master
+4. enter command :
+   docker run -u 0 --privileged --name jenkins -it -d -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v         /home/jenkins_home:/var/jenkins_home jenkins/jenkins:latest
+
+   Check : docker ps -a
+           kubectl get nodes 
+
+6. login jenkins in browser
+7. add (2)credential and plugin 
+8. new item --> create pipeline --> add pipeline and build
+9. after run website in browser (publicip : 31110 )
 _______________________________________________________________________________________________________________
 
 Add External plugin : in jenkins -> Advanced Plugin -> choose file : kubernetes-cd.hpi 
