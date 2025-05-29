@@ -40,7 +40,8 @@ ________________________________________________________________
 2. connect node > master 
 3. install docker.io in master
 4. enter command :
-   docker run -u 0 --privileged --name jenkins -it -d -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v         /home/jenkins_home:/var/jenkins_home jenkins/jenkins:latest
+  docker run -u 0 --privileged --name jenkins -it -d -p 8080:8080 -p 50000:50000 -v
+/var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v /home/jenkins_home:/var/jenkins_home jenkins/jenkins:latest
 
    Check : docker ps -a
            kubectl get nodes 
@@ -66,3 +67,12 @@ _________________________________________________________________
 
 Add Pipeline in jenkins 
 buid project 
+_____________________________________________
+output : ![Screenshot 2025-05-27 224122](https://github.com/user-attachments/assets/6610efe0-0ac0-4acf-9516-c3946b9b5d4c)
+
+if any changes in index.html or yml file 
+after enter this command
+'''
+kubectl delete all --all
+'''
+after build pipeline and run project
