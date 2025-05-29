@@ -1,5 +1,5 @@
 Project Title : **CI/CD Pipeline for Node.js App using Jenkins, Docker & Kubernetes .**
-"Set up a real-time CI/CD pipeline where Jenkins auto-builds a Docker image on GitHub commit, pushes it to Docker Hub, and deploys it to a Kubernetes cluster on AWS EC2. Used Declarative Jenkinsfile, Kubernetes YAML, and Docker for full automation." 
+overview : "Set up a real-time CI/CD pipeline where Jenkins auto-builds a Docker image on GitHub commit, pushes it to Docker Hub, and deploys it to a Kubernetes cluster on AWS EC2. Used Declarative Jenkinsfile, Kubernetes YAML, and Docker for full automation." 
 
 
 🔄 DevOps CI/CD Workflow (Node.js App)
@@ -26,9 +26,26 @@ Project Title : **CI/CD Pipeline for Node.js App using Jenkins, Docker & Kuberne
 
 
 📌 Technologies Involved:
-          GitHub: Source code repository
-          Jenkins: CI/CD automation tool
-          Node.js: Application runtime
-          Docker: Containerization
-          Docker Hub: Image registry
-          Kubernetes: Container orchestration
+         - GitHub: Source code repository.
+         - Jenkins: CI/CD automation tool.
+         - Node.js: Application runtime.
+         - Docker: Containerization.
+         - Docker Hub: Image registry.
+         - Kubernetes: Container orchestration.
+_______________________________________________________________________________________________________________
+
+Add External plugin : in jenkins -> Advanced Plugin -> choose file : kubernetes-cd.hpi 
+Available Plugin : docker pipeline, pipeline stage view
+
+_________________________________________________________________
+
+**Add Credential** : Docker hub id and password , Describe : dockerlogin
+select kubernetes : id -> kubernets 
+
+after click on enter : 
+open master putty : cat ~/.kube/config
+select all ( api version to last line ) copy paste in jenkins kubernets .
+_________________________________________________________________
+
+Add Pipeline in jenkins 
+buid project 
