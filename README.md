@@ -34,6 +34,8 @@ Description : "Set up a real-time CI/CD pipeline where Jenkins auto-builds a Doc
          - Docker Hub: Image registry.
          - Kubernetes: Container orchestration.
 
+Packages : apt install docker.io
+           install jenkins 
 ________________________________________________________________
 **Steps :**
 1. create 2 mediaum instance and connect putty.
