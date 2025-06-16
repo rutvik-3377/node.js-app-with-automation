@@ -1,3 +1,5 @@
+![nda](https://github.com/user-attachments/assets/012bce4e-93c8-4bb2-b8c7-3eb26f5239b4)
+
 Project Title :
 **CI/CD Pipeline for Node.js App using Jenkins, Docker & Kubernetes .**
 Description : "Set up a real-time CI/CD pipeline where Jenkins auto-builds a Docker image on GitHub commit, pushes it to Docker Hub, and deploys it to a Kubernetes cluster on AWS EC2. Used Declarative Jenkinsfile, Kubernetes YAML, and Docker for full automation." 
