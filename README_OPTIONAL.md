@@ -336,7 +336,7 @@ kubectl get svc
  
 ### 🌐 Step 7: Access the App
 ```
-http://<Node-IP>:<NodePort>
+http://<Node-IP>:31110
 ```
 ### ✅ Final Output: Application Response
 ![Output Screenshot](Output.png)
